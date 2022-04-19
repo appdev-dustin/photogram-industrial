@@ -25,12 +25,10 @@
   </div>
 </div>
 
+<h2>Followers</h2>
 
+<%= current_user.followers.count %>
 
-<h2>Feed</h2>
-
-<%= current_user.feed.count %>
-
-<% current_user.feed.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+<% current_user.followers.each do |follower| %>
+  <%= render "follow_requests/connection", connection: follower %>
 <% end %>

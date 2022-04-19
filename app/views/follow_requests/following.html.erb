@@ -25,12 +25,10 @@
   </div>
 </div>
 
+<h2>Following</h2>
 
+<%= current_user.leaders.count %>
 
-<h2>Feed</h2>
-
-<%= current_user.feed.count %>
-
-<% current_user.feed.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+<% current_user.leaders.each do |leader| %>
+  <%= render "follow_requests/connection", connection: leader %>
 <% end %>
